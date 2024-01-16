@@ -4,7 +4,6 @@ from pyflink.table.udf import udf
 
 ZONES = ("Main_Zone","Sub1_Zone","Sub2_Zone","Sub3_Zone","Sub4_Zone")
 
-offset = {}
 
 @udf(input_types=[DataTypes.STRING()], result_type=DataTypes.STRING())
 def zone_id_to_name(id):
@@ -27,8 +26,7 @@ if __name__ == '__main__':
                 'properties.bootstrap.servers' = 'redpanda:29092',
                 'properties.group.id' = 'test-group',
                 'scan.bounded.mode' = 'latest-offset',
-                'scan.startup.mode' = 'specific-offsets',
-                'scan.startup.specific-offsets' = 'partition:0,offset:""" + str(offset["latest"]) + """',
+                'scan.startup.mode' = 'earliest-offset',
                 'format' = 'json'
             )
             """

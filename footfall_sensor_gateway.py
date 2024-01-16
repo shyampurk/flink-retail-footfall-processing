@@ -37,9 +37,6 @@ def get_sensor_reading(id):
     usual_footfall = random.randrange(0,(int(total_persons_in/2) + 1))
     rush_factor = random.randrange(1,4)
     person_count = usual_footfall * rush_factor
-    print(f"standard footfall: {usual_footfall}")
-    print(f"rush footfall: {rush_factor}")
-
 
   print(f'Sensor id : {id} , Footfall count: {person_count}')
   return person_count
