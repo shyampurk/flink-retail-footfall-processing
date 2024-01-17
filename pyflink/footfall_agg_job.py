@@ -17,7 +17,6 @@ if __name__ == '__main__':
     source_ddl = f"""
             
             CREATE TABLE footfall_count(
-                createTime VARCHAR,
                 zoneCount BIGINT,
                 zoneId INT
             ) WITH (

@@ -56,7 +56,6 @@ if __name__ == '__main__':
 
       for sensor_id in range(MAIN_ZONE_SENSOR_ID,TOTAL_SENSOR_COUNT):
         producer.send(REDPANDA_TOPIC,{ 
-          "createTime" : time.ctime() , 
           "zoneCount" : get_sensor_reading(sensor_id), 
           "zoneId" : sensor_id
         }).add_errback(on_send_error)
