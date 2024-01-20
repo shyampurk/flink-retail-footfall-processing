@@ -1,5 +1,6 @@
 ###############################################################################
-# Build PyFlink Playground Image
+# Build PyFlink Image for retail footfall data processing with Flink v 1.17.0
+# and Python 3.7.9
 ###############################################################################
 
 FROM apache/flink:1.17.0-scala_2.12-java8
